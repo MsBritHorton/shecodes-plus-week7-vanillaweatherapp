@@ -1,0 +1,73 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  background: linear-gradient(
+    0deg,
+    rgb(247, 247, 247) 23.8%,
+    rgb(252, 221, 221) 92%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  border: 1px solid white;
+  margin: 50px;
+  padding: 70px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgb(194, 194, 194);
+}
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-align: center;
+  font-size: 50px;
+}
+
+.city-search {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.search {
+  background: rgb(250, 231, 231);
+  border-radius: 5px;
+  border: 2px solid rgb(182, 182, 182);
+  padding: 10px;
+  width: 75%;
+}
+
+.submit {
+  border: 2px solid rgb(182, 182, 182);
+  background: rgb(251, 178, 178);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  transition: all 200ms ease-in-out;
+}
+.submit:hover {
+  cursor: pointer;
+  background: rgb(224, 144, 144);
+  color: white;
+}
+
+strong {
+  color: rgb(231, 114, 114);
+  font-weight: 600;
+}
+
+.current-temperature {
+  display: flex;
+  position: relative;
+  top: -75px;
+  justify-content: end;
+  font-size: 50px;
+  font-weight: 500;
+}
+
+footer {
+  margin: 5px 0;
+}
