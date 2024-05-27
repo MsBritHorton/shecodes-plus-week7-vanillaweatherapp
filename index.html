@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
     <link rel="stylesheet" href="src/styles.css" />
-   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,7 +23,7 @@
   <body>
     <div class="container">
       <header>
-        <form class="city-search" id="city-search-form">
+        <form class="city-search-form" id="city-search-form">
           <input
             type="search"
             placeholder="Enter a city.."
@@ -36,14 +37,22 @@
       <main>
         <div class="current-weather">
           <div>
-            <h1 id="current-city">Paris</h1>
+            <h1 id="current-city"></h1>
+            <div class="weather-info">
             <p class="current-details">
               Saturday 15:32, moderate rain <br />
               Humidity: <strong>87%</strong>, Wind: <strong>7.2km/h</strong>
             </p>
           </div>
-          <div class="current-temperature">☀️ 14°C</div>
+          </div>
+          <div class="current-temperature">
+            <span class="weather-icon">☀️</span>
+            
+          <div class="current-temperature" id="temperature">20</div>
+          <div class="weather-unit">°F</div>
         </div>
+        </div>
+     
       </main>
       <footer>
         <p>

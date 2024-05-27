@@ -27,7 +27,7 @@ h1 {
   font-size: 50px;
 }
 
-.city-search {
+.city-search-form {
   text-align: center;
   font-family: "Roboto", sans-serif;
 }
@@ -58,6 +58,15 @@ strong {
   color: rgb(231, 114, 114);
   font-weight: 600;
 }
+
+
+.current-weather {
+  display: flex;
+  position: relative;
+}
+
+
+
 
 .current-temperature {
   display: flex;
