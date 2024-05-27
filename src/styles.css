@@ -63,19 +63,32 @@ strong {
 .current-weather {
   display: flex;
   position: relative;
+  justify-content: space-between;
 }
 
+.current-temperature-container {
+display: flex;
+position: relative;
+top: 70px;
+justify-content: end;
+font-size: 40px;
+font-weight: 500;
 
+}
 
+.weather-icon {
+  font-size: 44px;
+  margin-top: 10px;
+}
 
 .current-temperature {
-  display: flex;
-  position: relative;
-  top: -75px;
-  justify-content: end;
-  font-size: 50px;
-  font-weight: 500;
+  font-size: 75px;
+  margin-left: 10px;
+  font-weight: bold;
+
 }
+
+
 
 footer {
   margin: 5px 0;
