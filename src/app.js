@@ -1,3 +1,5 @@
+
+
 function refreshWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
@@ -35,7 +37,7 @@ citySearchForm.addEventListener("submit", changeCityData);
 
 searchCity("Chicago");
 
-function displayForecast() {
+/*function displayForecast() {
 
   let forecastDays = ["Mon", "Tue", "Wed", "Thu", "Fri"];
   let forecastHtml = "";
@@ -60,7 +62,8 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHtml;
 }
 
-displayForecast();
+displayForecast();*/
+
 
 let currentTime = new Date();
 

@@ -85,7 +85,7 @@ strong {
   font-weight: bold;
 }
 
-.weather-forecast {
+/*.weather-forecast {
   display: inline-flex;
    margin-top: 30px;
   text-align: center;
@@ -99,7 +99,7 @@ strong {
 
 .min-temperature {
   color: rgb(231, 114, 114);
-}
+}*/
 footer {
-  margin: 5px 0;
+  margin: 20px 0;
 }
