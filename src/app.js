@@ -35,6 +35,33 @@ citySearchForm.addEventListener("submit", changeCityData);
 
 searchCity("Chicago");
 
+function displayForecast() {
+
+  let forecastDays = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  let forecastHtml = "";
+
+  forecastDays.forEach(function(forecastCalendarDay) {
+    forecastHtml = forecastHtml +
+      `<div class="weather-day">${forecastCalendarDay}</div>
+            </div>
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png"
+              alt=""
+              width="36"
+            />
+          </div>
+          <div class="forecast-temperature">
+            <span class="max-temperature">18&deg;</span>
+            <span class="min-temperature">12&deg;</span>
+          </div>`;
+  });
+  let forecastElement = document.querySelector("#forecast");
+
+  forecastElement.innerHTML = forecastHtml;
+}
+
+displayForecast();
+
 let currentTime = new Date();
 
 let hours = [
@@ -81,57 +108,3 @@ let minute = currentTime.getMinutes();
 let currentDayInfo = document.querySelector(".current-details");
 currentDayInfo.innerHTML = `<p>${day} ${hour}:${minute}, ${descriptionElement} <br />
 Humidity: <strong>${humidityElement}%</strong>, Wind: <strong>7.2km/h</strong></p>`;
-
-/*function search(event) {
-  event.preventDefault();
-  let searchInputElement = document.querySelector("#search-input");
-  let cityElement = document.querySelector("#current-city");
-  cityElement.innerHTML = searchInputElement.value;
-  let units = "imperial";
-  let apiKey = "bca5e052413bdbcf0bf4oa7bbat0c995";
-  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${searchInputElement.value}&key=bca5e052413bdbcf0bf4oa7bbat0c995&units=${units}`;
-  axios.get(apiURL).then(showTemperature);
-}
-
-//New code for API
-function showTemperature(response) {
-  let temperature = Math.round(response.data.temperature.current);
-  let currentTemperature = document.querySelector("#current-temperature-value");
-  currentTemperature.innerHTML = `${response.data.temperature.current}`;
-}
-
-function formatDate(date) {
-  let minutes = date.getMinutes();
-  let hours = date.getHours();
-  let day = date.getDay();
-
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-
-  let formattedDay = days[day];
-  return `${formattedDay} ${hours}:${minutes}`;
-}
-
-let searchForm = document.querySelector("#city-search-form");
-searchForm.addEventListener("submit", search);
-
-let currentDateELement = document.querySelector("#current-details");
-let currentDate = new Date();
-
-currentDateELement.innerHTML = formatDate(currentDate);
-*/
