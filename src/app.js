@@ -1,3 +1,43 @@
+
+
+function refreshWeather(response){
+  let temperatureElement = document.querySelector("#temperature");
+  let temperature = response.data.temperature.current;
+let cityElement = document.querySelector("#current-city");
+let descriptionElement = document.querySelector("#description");
+
+
+
+cityElement.innerHTML = response.data.city;
+temperatureElement.innerHTML = Math.round(temperature);
+descriptionElement.innerHTML = response.data.condition.description;
+}
+
+
+
+function searchCity(city) {
+    let apiKey = "bca5e052413bdbcf0bf4oa7bbat0c995";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
+    console.log(apiUrl);
+    axios.get(apiUrl).then(refreshWeather);
+}
+
+function changeCityData(event) {
+  event.preventDefault();
+  let searchInputName = document.querySelector("#search-city-input");
+  let currentCityName = document.querySelector("#current-city");
+  currentCityName.innerHTML = searchInputName.value;
+  searchCity(searchInputName.value);
+}
+let citySearchForm = document.querySelector("#city-search-form");
+citySearchForm.addEventListener("submit", changeCityData);
+
+searchCity("Chicago");
+
+
+
+
+
 let currentTime = new Date();
 
 let hours = [
@@ -42,46 +82,8 @@ let hour = hours[currentTime.getHours()];
 let minute = currentTime.getMinutes();
 
 let currentDayInfo = document.querySelector(".current-details");
-currentDayInfo.innerHTML = `<p>${day} ${hour}:${minute}, moderate rain <br />
+currentDayInfo.innerHTML = `<p>${day} ${hour}:${minute}, ${descriptionElement} <br />
 Humidity: <strong>87%</strong>, Wind: <strong>7.2km/h</strong></p>`;
-
-// Feature 2
-//Add a search engine: a search bar with a button.
-//When searching for a city (i.e. Paris), display the city
-//name on the page after the user submits the form.
-
-function refreshWeather(response){
-  let temperatureElement = document.querySelector("#temperature");
-  let temperature = response.data.temperature.current;
-let cityElement = document.querySelector("#current-city");
-cityElement.innerHTML = response.data.city;
-temperatureElement.innerHTML = Math.round(temperature);
-}
-
-
-
-function searchCity(city) {
-    let apiKey = "bca5e052413bdbcf0bf4oa7bbat0c995";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
-    console.log(apiUrl);
-    axios.get(apiUrl).then(refreshWeather);
-}
-
-function changeCityData(event) {
-  event.preventDefault();
-  let searchInputName = document.querySelector("#search-city-input");
-  let currentCityName = document.querySelector("#current-city");
-  currentCityName.innerHTML = searchInputName.value;
-  searchCity(searchInputName.value);
-}
-let citySearchForm = document.querySelector("#city-search-form");
-citySearchForm.addEventListener("submit", changeCityData);
-
-searchCity("Chicago");
-
-
-
-
 
 
 
