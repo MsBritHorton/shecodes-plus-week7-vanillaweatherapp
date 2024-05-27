@@ -1,4 +1,4 @@
-function refreshWeather(response){
+function refreshWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
   let cityElement = document.querySelector("#current-city");
@@ -14,15 +14,13 @@ function refreshWeather(response){
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon"/>`;
-
 }
 
-
 function searchCity(city) {
-    let apiKey = "bca5e052413bdbcf0bf4oa7bbat0c995";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
-    console.log(apiUrl);
-    axios.get(apiUrl).then(refreshWeather);
+  let apiKey = "bca5e052413bdbcf0bf4oa7bbat0c995";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(refreshWeather);
 }
 
 function changeCityData(event) {
@@ -36,10 +34,6 @@ let citySearchForm = document.querySelector("#city-search-form");
 citySearchForm.addEventListener("submit", changeCityData);
 
 searchCity("Chicago");
-
-
-
-
 
 let currentTime = new Date();
 
@@ -87,9 +81,6 @@ let minute = currentTime.getMinutes();
 let currentDayInfo = document.querySelector(".current-details");
 currentDayInfo.innerHTML = `<p>${day} ${hour}:${minute}, ${descriptionElement} <br />
 Humidity: <strong>${humidityElement}%</strong>, Wind: <strong>7.2km/h</strong></p>`;
-
-
-
 
 /*function search(event) {
   event.preventDefault();

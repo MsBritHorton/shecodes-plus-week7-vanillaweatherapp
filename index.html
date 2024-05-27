@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
     <link rel="stylesheet" href="src/styles.css" />
-        <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,7 +31,7 @@
             class="search"
             id="search-city-input"
           />
-          <input type="submit" value="Search" class="submit" id="submit"/>
+          <input type="submit" value="Search" class="submit" id="submit" />
         </form>
       </header>
       <main>
@@ -39,33 +39,43 @@
           <div>
             <h1 id="current-city"></h1>
             <div class="weather-info">
-            <p class="current-details">
-              Saturday 15:32, <span id="description"></span> <br />
-              Humidity: <strong id="humidity"></strong>, Wind: <strong id="wind-speed"></strong>
-            </p>
-          </div>
+              <p class="current-details">
+                Saturday 15:32, <span id="description"></span> <br />
+                Humidity: <strong id="humidity"></strong>, Wind:
+                <strong id="wind-speed"></strong>
+              </p>
+            </div>
           </div>
           <div class="current-temperature-container">
-           <div id="icon">
-            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png" class="weather-icon"/></span>
+            <div id="icon">
+              <img
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png"
+                class="weather-icon"
+              />
+            </div>
+            <div class="current-temperature" id="temperature">20</div>
+            <div class="weather-unit">°F</div>
           </div>
-          <div class="current-temperature" id="temperature">20</div>
-          <div class="weather-unit">°F</div>
         </div>
-        </div>
-     
       </main>
       <footer>
         <p>
           This project was coded by
-          <a href="https://github.com/MsBritHorton" target="_blank">Brittany Horton</a> and is open-sourced
-          <a href="https://github.com/MsBritHorton/shecodes-plus-week7-vanillaweatherapp.git" target="_blank"> on GitHub</a> and
+          <a href="https://github.com/MsBritHorton" target="_blank"
+            >Brittany Horton</a
+          >
+          and is open-sourced
+          <a
+            href="https://github.com/MsBritHorton/shecodes-plus-week7-vanillaweatherapp.git"
+            target="_blank"
+          >
+            on GitHub</a
+          >
+          and
           <a href="#" target="_blank">hosted on Netlify</a>
         </p>
       </footer>
     </div>
-        <script src="src/app.js"></script>
-      
-
+    <script src="src/app.js"></script>
   </body>
 </html>
